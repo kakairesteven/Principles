@@ -1,0 +1,381 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Akshar, Arial, sans-serif;
+}
+
+/*
+Media
+
+Displays an image on the left and body content on the right.
+
+Markup:
+<div class="media">
+    <img class="media__image"
+        src="https://via.placeholder.com/150">
+    <div class="media_body">
+        <h4>Strength</h4>
+        <p>
+            Strength training is an important part of
+            injury prevention. Focus on your core&mdash;
+            especially your abs and glutes.
+        </p>
+    </div>
+</div>
+
+Styleguide Media
+*/
+.media {
+  padding: 1.5em;
+  background-color: #eee;
+  border-radius: 0.5em;
+}
+.media::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.media__image {
+  float: left;
+  margin-right: 1.5em;
+}
+
+.media_body {
+  overflow: auto;
+  margin-top: 0;
+}
+
+.media_body > h4 {
+  margin-top: 0;
+}
+
+/* 
+Buttons
+
+Buttons are available in a number of sizes and
+colors. YOu may mix and match any size with any color.
+
+Markup:
+<button class="button {{modifier_class}}">
+click here
+</button>
+
+.button--success - A green success button
+.button--danger - A red danger button
+.button--small - A small button
+.button--large - A large button
+
+Styleguide Buttons
+*/
+.button {
+  padding: 1em 1.25em;
+  border: 1px solid #3265559;
+  border-radius: 0.2em;
+  background-color: transparent;
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+button--success {
+  border-color: #cfe8c9;
+  color: #fff;
+  background-color: #2f5926;
+}
+.button--danger {
+  border-color: #e8c9c9;
+  color: #fff;
+  background-color: #a92323;
+}
+.button--small {
+  font-size: 0.8rem;
+}
+.button--large {
+  font-size: 1.2rem;
+}
+
+/* 
+fade
+
+This gives a linear gradient fading from white to blue, 
+left to right
+
+Markup:
+<div class="fade"></div>
+
+Styleguide fade
+*/
+.fade {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(to right, white, black);
+}
+
+/*
+45 degrees fade
+
+This produces a linear gradient that fades with an angle
+of 45 degrees.
+
+Markup:
+<div class="fade-45degrees"></div>
+
+Styleguide fade-45degrees
+*/
+.fade-45degrees {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(34.8deg, white, blue);
+}
+
+/* 
+Color stop
+
+This example illutrates use of multiple colors
+
+Markup:
+<div class="fade-ncolors"></div>
+
+Styleguide fade-ncolors
+*/
+.fade-ncolors {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(90deg, red, green, white, blue);
+}
+
+/* 
+Gradient-stripes
+
+This happens when colors are placed at the same position
+
+<div class="fade-stripes"></div>
+
+Styleguide Color Stripes
+*/
+.fade-stripes {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(
+    90deg,
+    red 40%,
+    white 40%,
+    white 60%,
+    blue 60%
+  );
+}
+
+/* 
+Stripped Bar
+
+This code gives a repeating linear gradient
+
+Markup:
+<div class="stripped-bar"></div>
+
+Styleguide Stripped Bar
+*/
+.stripped-bar {
+  height: 1em;
+  width: 400px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #57b,
+    #57b 10px,
+    #148 10px,
+    #148 20px
+  );
+  border-radius: 0.3em;
+}
+
+/* 
+Radial gradient
+
+Markup:
+<div class="radial-gradient"></div>
+
+Styleguide Radial-gradient
+*/
+.radial-gradient {
+  height: 200px;
+  width: 400px;
+  background-image: radial-gradient(white, blue);
+}
+
+/* 
+Depth
+
+This styles a button that appears depressed when clicked
+and released after clicking.
+
+Markup:
+<button class="button-depth">Sign up now</button>
+
+Styleguide Depth
+*/
+.button-depth {
+  padding: 1em;
+  border: 0;
+  font-size: 0.8rem;
+  color: white;
+  border-radius: 0.5em;
+  background-image: linear-gradient(to bottom, #57b, #148);
+  box-shadow: 0.1em 0.1em 0.5em #124;
+}
+
+.button-depth:active {
+  box-shadow: inset 0 0 0.5em #124, inset 0 0.5em 1em rgba(0, 0, 0, 0.4);
+}
+
+.button-depth:focus {
+  outline: none;
+}
+
+/* 
+Flat design
+
+This approach emulated the real digital world, using subtle
+gradients
+
+Markup:
+<button class="button-flat">Sign Up</button>
+
+Styleguide Flat design
+*/
+.button-flat {
+  padding: 1em;
+  border: 0;
+  color: white;
+  background-color: #57b;
+  font-size: 1rem;
+  padding: 0.8em;
+  box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.25);
+}
+.button-flat:hover {
+  background-color: #456ab6;
+}
+.button-flat:active {
+  background-color: #148;
+}
+
+/* 
+Button Modern
+
+This gives a middle ground between skeumorphism and flat design.
+
+Markup:
+<button class="button-modern">Sign Up</button>
+
+Styleguide Modern button
+*/
+.button-modern {
+  padding: 0.8em;
+  border: 0;
+  font-size: 1rem;
+  color: white;
+  border-radius: 0.5em;
+  background-color: #57b;
+  box-shadow: 0 0.075em #148;
+  text-shadow: 1px 1px #148;
+}
+.button-modern:active {
+  background-color: #456ab5;
+  transform: translateY(0.075em);
+  box-shadow: none;
+}
+
+/* 
+Background blends
+
+This displays a blend of two background images.
+
+Markup:
+<div class="blend"></div>
+
+Styleguide Background blends
+*/
+.blend {
+  min-height: 400px;
+  background-image: url(../lion-medium.jpg), url(../lion-medium.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -30vw, 30vw;
+  background-blend-mode: multiply;
+}
+
+/* 
+Image And Hue
+
+This ruleset covers a background-image with a hue.
+
+Markup:
+<div class="blend-hue"></div>
+
+Styleguide Image And Hue
+*/
+.blend-hue {
+  min-height: 400px;
+  background-image: url(../lion-medium.jpg);
+  background-color: #148;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: luminosity;
+}
+
+/* 
+Image and texture
+
+This style applies a texture over an image.
+
+Markup:
+<div class="blend-texture"></div>
+
+Styleguide Image and Texture
+*/
+.blend-texture {
+  min-height: 400px;
+  background-image: url("../texture-medium.jpg"), url("../lion-medium.jpg");
+  background-size: cover;
+  /* background-repeat: repeat, no-repeat; */
+  background-position: center center;
+  background-blend-mode: soft-light;
+}
+
+/*
+Text and Image blends
+
+This ruleset adds beutifully blends text.
+
+Markup:
+<div class="blend-text">
+<h1>integral</h1>
+</div>
+
+Styleguide Text and Image blend
+*/
+.blend-text {
+  background-image: url("../lion-small.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 5em 0 10em;
+}
+
+.blend-text > h1 {
+  margin: 0;
+  font-family: Akshar, Arial, sans-serif;
+  font-size: 6rem;
+  text-align: center;
+  mix-blend-mode: hard-light;
+  background-color: #c33;
+  color: #808080;
+  border: 0.1em solid #ccc;
+  border-width: 0;
+}
